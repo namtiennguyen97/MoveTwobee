@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="start()">
+
+<img src="19389759_2294738977418802_1832772107_n.ico" id="myPic" style="height: 100px; width: 100px; left: 0px; top: 0;position: absolute"/>
+
+<script>
+    // xay dung cac function cho cac phim
+function keyUp() {
+    let kup = document.getElementById("myPic");
+    kup.style.top = parseInt(kup.style.top) - 5+"px";
+}
+function keyDown() {
+    let kdown = document.getElementById("myPic");
+    kdown.style.top = parseInt(kdown.style.top)+ 5 +"px";
+}
+function keyRight() {
+    let kright = document.getElementById("myPic");
+    kright.style.left = parseInt(kright.style.left) + 5 +"px";
+}
+function keyLeft() {
+    let kleft = document.getElementById("myPic");
+    kleft.style.left = parseInt(kleft.style.left) -5 +"px";
+}
+// xay dung cac ham nhan cac phim
+function moveSelect(evt) {
+    switch (evt.keyCode) {
+        case 37: //37- di trai
+            keyLeft();
+            break;
+        case 38:// 38- di len
+            keyUp();
+            break;
+        case 39:// 39- sang ben phai
+            keyRight();
+            break;
+        case 40:// 40- key down
+            keyDown();
+            break;
+    }
+};
+function start() {
+    window.addEventListener('keydown', moveSelect);
+}
+
+</script>
+</body>
+</html>
